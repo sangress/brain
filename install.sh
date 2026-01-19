@@ -26,11 +26,11 @@ mkdir -p "$CONFIG_DIR"
 
 # --- download files ---
 echo "⬇️  Downloading brain-gen..."
-curl -fsSL "$REPO_RAW_BASE/brain-gen" -o "$BIN_DIR/brain-gen"
-chmod +x "$BIN_DIR/brain-gen"
+curl -fsSL "$REPO_RAW_BASE/brain.sh" -o "$BIN_DIR/brain.sh"
+chmod +x "$BIN_DIR/brain.sh"
 
 echo "⬇️  Downloading brain.sh..."
-curl -fsSL "$REPO_RAW_BASE/brain.sh" -o "$CONFIG_DIR/brain.sh"
+curl -fsSL "$REPO_RAW_BASE/brain_func.sh" -o "$CONFIG_DIR/brain_func.sh"
 
 # --- ensure ~/.local/bin in PATH ---
 if ! grep -q 'export PATH=.*\.local/bin' "$BASHRC"; then
@@ -38,14 +38,14 @@ if ! grep -q 'export PATH=.*\.local/bin' "$BASHRC"; then
   echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$BASHRC"
 fi
 
-# --- source brain.sh ---
-if ! grep -q 'source .*brain.sh' "$BASHRC"; then
-  echo "➕ Sourcing brain.sh in ~/.bashrc"
+# --- source brain_func.sh ---
+if ! grep -q 'source .*brain_func.sh' "$BASHRC"; then
+  echo "➕ Sourcing brain_func.sh in ~/.bashrc"
   cat >> "$BASHRC" <<'EOF'
 
 # brain — AI-powered Bash command helper
-if [[ -f "$HOME/.config/brain/brain.sh" ]]; then
-  source "$HOME/.config/brain/brain.sh"
+if [[ -f "$HOME/.config/brain/brain_func.sh" ]]; then
+  source "$HOME/.config/brain/brain_func.sh"
 fi
 EOF
 fi
