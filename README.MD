@@ -7,7 +7,7 @@ Type what you want → press Ctrl+G → command appears (not executed).
 # Author - Shai Angress (sangress)
 
 ## Demo
-(show gif)
+![brain demo](brain_demo.gif)
 
 ## Installation
 curl -fsSL https://raw.githubusercontent.com/sangress/brain/main/install.sh | bash
