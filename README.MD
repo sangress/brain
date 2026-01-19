@@ -15,7 +15,7 @@ curl -fsSL https://raw.githubusercontent.com/sangress/brain/main/install.sh | ba
 ## Usage
 Type:
 show git config username
-Press Ctrl+O
+Press Ctrl+G
 
 ## Requirements
 - bash
