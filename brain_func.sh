@@ -8,7 +8,7 @@ brain() {
     return 1
   fi
 
-  cmd="$(~/dev/scripts/brain.sh "$prompt")" || return $?
+  cmd="$(~/.local/bin/brain.sh "$prompt")" || return $?
 
   # paste into current command line (no execute)
   if [[ -n "${READLINE_LINE+x}" ]]; then
